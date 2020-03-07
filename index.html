@@ -12,7 +12,7 @@
         }
 
         body {
-            background-color: #333333;
+            background-color: #181a1b;
         }
 
         button {
@@ -21,7 +21,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             border: none;
-            background-color: red;
+            background-color: #cc0000;
             padding: 10px 20px;
             color: white;
             font-size: 25px;
@@ -30,7 +30,7 @@
         }
 
         button.try {
-            background-color: green;
+            background-color: #2196f3;
             font-size: 20px;
         }
 
@@ -46,7 +46,7 @@
             color: white;
             background-color: rgba(0, 0, 0, 0.9);
             border-radius: 14px;
-            border: 2px solid black;
+            border: 2px solid rgb(102, 102, 102);
             font-weight: bold;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 30px;
@@ -88,11 +88,11 @@
             p.textContent = response[Math.floor(Math.random() * response.length)];
             if(p.textContent === "Nie udało się!") {
                 btn2.textContent = "Spróbuj ponownie!";
-                btn2.style.backgroundColor = "red";
+                btn2.style.backgroundColor = "#cc0000";
             }
             else {
                 btn2.textContent = "Zamknij";
-                btn2.style.backgroundColor = "green";
+                btn2.style.backgroundColor = "#2196f3";
             }
             div.style.display = 'block';
         });
