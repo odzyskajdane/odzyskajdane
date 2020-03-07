@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dawid i przygody jego dysku.</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #333333;
+        }
+
+        button {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: none;
+            background-color: red;
+            padding: 10px 20px;
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button.try {
+            background-color: green;
+            font-size: 20px;
+        }
+
+        div {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 14px;
+            border: 2px solid black;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+            position: fixed;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dane Dawida!</h1>
+
+    <button class="data">Odzyskaj dane!</button>
+
+    <div>
+        <p>Nie udało się!</p>
+        <button class="try">Spróbuj ponownie</button>
+    </div>
+
+    <script>
+        var btn = document.querySelector('button.data');
+        var btn2 = document.querySelector('button.try');
+        var div = document.querySelector('div');
+        var p = document.querySelector('div p');
+
+        var response = ["Nie udało się!", "Gotowe!"];
+
+        btn.addEventListener('click', function() {
+            p.textContent = response[Math.floor(Math.random() * response.length)];
+            if(p.textContent === "Nie udało się!") {
+                btn2.textContent = "Spróbuj ponownie!";
+                btn2.style.backgroundColor = "red";
+            }
+            else {
+                btn2.textContent = "Zamknij";
+                btn2.style.backgroundColor = "green";
+            }
+            div.style.display = 'block';
+        });
+        btn2.addEventListener('click', function() {
+            div.style.display = "none";
+        });
+    </script>
+</body>
+</html>
